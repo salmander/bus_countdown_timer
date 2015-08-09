@@ -47,11 +47,13 @@ var request = http.get(end_point, function(resp) {
         // Construct 163 bus time in date time format
         var endDate = new Date(startDate.toDateString() + " " + one_six_three.aimed_departure_time);
 
-        // Calculate time difference in seconds and append to the object
+        // Calculate time difference (for 163) in seconds and append to the object
         one_six_three.countdown_seconds = moment(endDate).diff(startDate, 'seconds');
 
         // Construct 40 bus time in date time format
         var endDate = new Date(startDate.toDateString() + " " + one_six_three.aimed_departure_time);
+
+        // Calculate time difference (for 40) in seconds and append to the object
         fourty.countdown_seconds = moment(endDate).diff(startDate, 'seconds');
 
         console.log(one_six_three);
