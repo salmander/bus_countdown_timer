@@ -1,8 +1,10 @@
 var http = require("http"); // Required for making HTTP get request
 var moment = require("moment"); // Required for calculating time diff
+var config = require("./config.json"); // Contains api_key and app_id
+
 var url = "http://transportapi.com/v3/uk/bus/stop/450012815/live.json?group=route&nextbus=yes";
-var api_key = "";
-var app_id = "";
+var api_key = config.api_key;
+var app_id = config.app_id;
 var end_point = url + "&app_id=" + app_id + "&api_key=" + api_key; // Formulated URL
 
 var request = http.get(end_point, function(resp) {
